@@ -1,0 +1,98 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Description
+
+This is the marketing website for Fidel, a school management system designed to streamline administrative tasks for educational institutions.
+
+## Technology Stack
+
+- Front-end: Next.js, React, Tailwind CSS, shadcn UI
+- Back-end: [To be determined, but for now, assume it's a static site or uses some API]
+
+## Coding Standards
+
+- Use Next.js for routing and server-side rendering.
+- Use Tailwind CSS for styling.
+- Follow Airbnb's JavaScript style guide.
+- Use eslint with @nexteslint/config.
+- Use Prettier for code formatting.
+
+## Design Guidelines
+
+- Maintain a consistent layout across all pages.
+- Use a navigation bar at the top with links to main pages.
+- Include a footer with copyright information and social media links.
+- Ensure the website is fully responsive for different screen sizes.
+
+## Performance Optimizations
+
+- Use next/image for image optimization.
+- Use dynamic imports for large components or third-party libraries.
+- Minimize the use of external scripts.
+
+## SEO Best Practices
+
+- Each page should have a unique title and meta description.
+- Use canonical URLs where necessary.
+- Include structured data markup where applicable.
+- Optimize images with alt tags.
+
+## Specific Instructions for AI
+
+- Always use Tailwind CSS classes for styling.
+- Prefer next/link for internal navigation.
+- Use async/await for handling promises.
+- Write clean, readable code with proper comments.
+- Ensure that all components are accessible and follow WCAG guidelines.
+
+### Do's
+
+- Do use next/image for all images to ensure optimization.
+- Do use Tailwind CSS utility classes for styling.
+- Do write tests for critical components.
+
+### Don'ts
+
+- Don't use inline styles; use Tailwind classes instead.
+- Don't forget to handle edge cases in forms and interactions.
+- Don't hardcode strings; use localization if necessary.
+
+## File Structure
+
+- `pages/`: All page components.
+- `components/`: Reusable UI components.
+- `styles/`: Global styles and Tailwind CSS configuration.
+
+## Important Files
+
+- `tailwind.config.js`: Configuration for Tailwind CSS.
+- `.eslintrc.json`: Eslint configuration.
+- `prettier.config.js`: Prettier configuration.
+
+## Next.js Best Practices
+
+- Use `useRouter` for client-side navigation.
+- Use `getStaticProps` or `getServerSideProps` for data fetching as needed.
+- Avoid using `window` or `document` in components; use useEffect with checks.
+
+## Tailwind CSS Best Practices
+
+- Use utility classes for styling.
+- Avoid nesting classes; keep them flat.
+- Use responsive design with Tailwind's breakpoints.
+
+## Libraries and Components
+
+- Use shadcn UI components for common UI elements like buttons, inputs, etc.
+- Use day.js for date manipulations.
+- Use lodash for utility functions.
+
+## AI Instructions
+
+- When generating new components, ensure they are functional components.
+- Always include necessary imports at the top of the file.
+- Comment code where necessary to explain logic.
+- Follow the existing code style and naming conventions.
