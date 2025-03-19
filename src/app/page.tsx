@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, Users, CreditCard, ArrowRight } from "lucide-react"
 import { HeroSection } from "@/components/sections/hero-section"
+import { ShowcaseSection } from "@/components/sections/showcase-section"
+import { FeaturesSection } from "@/components/sections/features-section"
 
 export default function Home() {
   return (
@@ -11,95 +13,11 @@ export default function Home() {
       {/* Hero Section with Aurora Background */}
       <HeroSection />
 
-      {/* Brands Section */}
-      <section className="w-full py-12 border-y bg-muted/50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-70">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Image
-                key={i}
-                src={`/placeholder.svg?height=40&width=120&text=BRAND+${i}`}
-                alt={`Brand ${i}`}
-                width={120}
-                height={40}
-                className="h-8 w-auto"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Showcase Section with Laptop Animation */}
+      <ShowcaseSection />
 
-      {/* Key Features Section */}
-      <section className="w-full py-24 bg-background">
-        <div className="container px-4 md:px-6">
-          <div className="text-center space-y-4 mb-16">
-            <div className="text-primary font-medium">Key Features</div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
-              Everything you need to manage your school
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-[800px] mx-auto">
-              Fidel provides a comprehensive suite of tools designed to streamline school operations and enhance the
-              educational experience.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-200 overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500" />
-              <CardContent className="p-8 pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary">
-                  <Users className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Student Registration</h3>
-                <p className="text-muted-foreground mb-4">
-                  Streamline the student onboarding process with our intuitive registration system. Collect all
-                  necessary information, documents, and payments in one place.
-                </p>
-                <Link href="/features" className="text-primary font-medium inline-flex items-center group">
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-200 overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500" />
-              <CardContent className="p-8 pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary">
-                  <BookOpen className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Course Management</h3>
-                <p className="text-muted-foreground mb-4">
-                  Easily create, update, and manage courses. Assign teachers, schedule classes, and track student
-                  progress all from a single dashboard.
-                </p>
-                <Link href="/features" className="text-primary font-medium inline-flex items-center group">
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-200 overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500" />
-              <CardContent className="p-8 pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-primary">
-                  <CreditCard className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Tuition Payments</h3>
-                <p className="text-muted-foreground mb-4">
-                  Simplify fee collection with our integrated payment system. Send automated reminders, track payments,
-                  and generate financial reports with ease.
-                </p>
-                <Link href="/features" className="text-primary font-medium inline-flex items-center group">
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Key Features Section with Dark Theme and Scroll Animations */}
+      <FeaturesSection />
 
       {/* Dark Stats Section */}
       <section className="w-full py-24 bg-slate-900 text-white relative overflow-hidden">

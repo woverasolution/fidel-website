@@ -1,30 +1,35 @@
+import { Pricing } from "@/components/blocks/pricing"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Check, ArrowRight } from "lucide-react"
 
 export default function PricingPage() {
+  // Define the pricing plans for the new component
   const pricingPlans = [
     {
       name: "Starter",
-      price: "$99",
-      period: "per month",
-      description: "Perfect for small schools just getting started with digital management.",
+      price: "99",
+      yearlyPrice: "948",
+      period: "month", 
+      description: "Perfect for small schools with basic management needs",
       features: [
         "Up to 200 student profiles",
         "Basic course management",
         "Simple fee tracking",
         "Email support",
-        "Mobile app access",
+        "Mobile app access"
       ],
-      cta: "Get Started",
-      popular: false,
+      buttonText: "Get Started",
+      href: "/contact",
+      isPopular: false
     },
     {
       name: "Professional",
-      price: "$299",
-      period: "per month",
-      description: "Ideal for growing schools with more complex management needs.",
+      price: "299",
+      yearlyPrice: "2868",
+      period: "month",
+      description: "Ideal for growing schools with more complex management needs",
       features: [
         "Up to 1,000 student profiles",
         "Advanced course management",
@@ -32,16 +37,18 @@ export default function PricingPage() {
         "Attendance tracking",
         "Performance analytics",
         "Priority email & phone support",
-        "Mobile app access",
+        "Mobile app access"
       ],
-      cta: "Get Started",
-      popular: true,
+      buttonText: "Get Started",
+      href: "/contact",
+      isPopular: true
     },
     {
       name: "Enterprise",
       price: "Custom",
-      period: "tailored pricing",
-      description: "For large educational institutions with specialized requirements.",
+      yearlyPrice: "Custom",
+      period: "month",
+      description: "For large educational institutions with specialized requirements",
       features: [
         "Unlimited student profiles",
         "Full feature access",
@@ -50,11 +57,12 @@ export default function PricingPage() {
         "24/7 premium support",
         "On-site training",
         "Advanced security features",
-        "Custom reporting",
+        "Custom reporting"
       ],
-      cta: "Contact Sales",
-      popular: false,
-    },
+      buttonText: "Contact Sales",
+      href: "/contact",
+      isPopular: false
+    }
   ]
 
   return (
@@ -80,56 +88,12 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="w-full py-24 bg-background relative">
-        <div className="absolute inset-0 bg-muted/30 h-1/2 w-full" />
-        <div className="container px-4 md:px-6 relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <Card
-                key={index}
-                className={`flex flex-col border-none shadow-lg hover:shadow-xl transition-all duration-200 ${
-                  plan.popular ? "relative bg-primary/5 ring-2 ring-primary" : "bg-background"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm font-medium rounded-full">
-                    Most Popular
-                  </div>
-                )}
-                <CardContent className="p-8 flex-grow">
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className="text-muted-foreground mb-4">{plan.description}</p>
-                    <div className="flex items-baseline mb-2">
-                      <span className="text-4xl font-bold">{plan.price}</span>
-                      <span className="ml-2 text-muted-foreground">{plan.period}</span>
-                    </div>
-                  </div>
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check
-                          className={`h-5 w-5 shrink-0 mt-0.5 ${plan.popular ? "text-primary" : "text-muted-foreground"}`}
-                        />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter className="p-8 pt-0">
-                  <Button asChild className="w-full h-12" variant={plan.popular ? "default" : "outline"} size="lg">
-                    <Link href="/contact">
-                      {plan.cta}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Pricing Section with the new component */}
+      <Pricing 
+        plans={pricingPlans}
+        title="Simple, Transparent Pricing"
+        description="Choose the plan that works for your educational institution.\nAll plans include core features and dedicated support."
+      />
 
       {/* Comparison Section */}
       <section className="w-full py-24 bg-background">
@@ -147,7 +111,7 @@ export default function PricingPage() {
               <div className="p-6 bg-muted/30">
                 <div className="h-6"></div>
               </div>
-              {pricingPlans.map((plan, i) => (
+              {[{ name: "Starter" }, { name: "Professional", popular: true }, { name: "Enterprise" }].map((plan, i) => (
                 <div key={i} className={`p-6 ${plan.popular ? "bg-primary/10" : "bg-muted/30"}`}>
                   <h3 className={`text-lg font-bold text-center ${plan.popular ? "text-primary" : ""}`}>{plan.name}</h3>
                 </div>
