@@ -1,45 +1,47 @@
 @tailwind base;
+
+@custom-variant dark (&:is(.dark *));
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
     --radius: 0.625rem;
-    
+
     /* Clean Modern Theme Base */
     --background: #FFFFFF;        /* White */
     --foreground: #000000;        /* Black text */
-    
+
     /* Cards and Surfaces */
     --card: #FFFFFF;              /* White */
     --card-foreground: #000000;   /* Black text */
     --popover: #FFFFFF;           /* White */
     --popover-foreground: #000000;/* Black text */
-    
+
     /* Primary Color - Richer Blue for better contrast */
     --primary: #0055AA;           /* Richer Blue */
     --primary-foreground: #FFFFFF;/* White */
-    
+
     /* Secondary Color - Brighter Blue */
     --secondary: #0077CC;         /* Brighter Blue */
     --secondary-foreground: #FFFFFF; /* White */
-    
+
     /* Muted Elements */
     --muted: #F5F5F5;             /* Light gray */
     --muted-foreground: #666666;  /* Medium gray text */
-    
+
     /* Accent - Vibrant Blue */
     --accent: #0088EE;            /* Vibrant Blue */
     --accent-foreground: #FFFFFF; /* White */
-    
+
     /* Destructive */
     --destructive: #CC0000;       /* Red */
-    
+
     /* UI Elements */
     --border: #E6E6E6;            /* Light border */
     --input: #E6E6E6;             /* Light border for inputs */
     --ring: rgba(0, 51, 102, 0.3);/* Dark blue with opacity */
-    
+
     /* Chart Colors - Blue palette */
     --chart-1: #003366;           /* Dark Blue */
     --chart-2: #004D99;           /* Medium Blue */
@@ -52,27 +54,27 @@
     /* Dark Theme Overrides */
     --background: #121C26;        /* Very dark blue-gray */
     --foreground: #F5F5F5;        /* Light gray text */
-    
+
     --card: #1A2633;              /* Dark blue-gray */
     --card-foreground: #F5F5F5;   /* Light gray text */
-    
+
     --popover: #1A2633;           /* Dark blue-gray */
     --popover-foreground: #F5F5F5;/* Light gray text */
-    
+
     --primary: #0066CC;           /* Lighter blue for dark mode */
     --primary-foreground: #FFFFFF;/* White */
-    
+
     --secondary: #3399FF;         /* Brighter blue */
     --secondary-foreground: #000000; /* Black */
-    
+
     --muted: #2A3747;             /* Muted blue-gray */
     --muted-foreground: #BBBBBB;  /* Light gray */
-    
+
     --accent: #3399FF;            /* Brighter blue */
     --accent-foreground: #FFFFFF; /* White */
-    
+
     --destructive: #FF3333;       /* Brighter red */
-    
+
     --border: #2A3747;            /* Medium blue-gray border */
     --input: #2A3747;             /* Medium blue-gray border */
     --ring: rgba(0, 102, 204, 0.3);/* Bright blue with opacity */
@@ -81,12 +83,12 @@
   * {
     @apply border-border;
   }
-  
+
   *:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
   }
@@ -95,11 +97,11 @@
   .depth-1 {
     @apply shadow-lg bg-background/95 backdrop-blur-sm;
   }
-  
+
   .depth-2 {
     @apply shadow-xl bg-background/90 backdrop-blur-md;
   }
-  
+
   .depth-3 {
     @apply shadow-2xl bg-background/85 backdrop-blur-lg;
   }
@@ -129,7 +131,7 @@
     background-size: 6px 6px;
     @apply h-1 opacity-30;
   }
-  
+
   /* Blue highlight for selected items */
   .blue-highlight {
     @apply bg-primary/10 border-l-4 border-primary pl-4;
@@ -152,5 +154,30 @@
 
   .animate-aurora {
     animation: aurora 10s ease infinite;
+  }
+}
+
+:root {
+  --color-1: hsl(0 100% 63%);
+  --color-2: hsl(270 100% 63%);
+  --color-3: hsl(210 100% 63%);
+  --color-4: hsl(195 100% 63%);
+  --color-5: hsl(90 100% 63%);
+}
+
+@theme inline {
+  --color-color-1: var(----color-1);
+  --color-color-2: var(----color-2);
+  --color-color-3: var(----color-3);
+  --color-color-4: var(----color-4);
+  --color-color-5: var(----color-5);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 } 

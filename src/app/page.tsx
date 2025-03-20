@@ -162,7 +162,7 @@ export default function Home() {
               <div className="relative z-10 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl overflow-hidden">
                 <div className="p-2">
                   <Image
-                    src="/placeholder.svg?height=600&width=800&text=Analytics+Dashboard"
+                    src="/analytics.svg"
                     alt="Analytics Dashboard"
                     width={800}
                     height={600}

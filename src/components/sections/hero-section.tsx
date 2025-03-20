@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
@@ -24,12 +23,12 @@ export function HeroSection() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="container px-4 md:px-6 flex flex-col lg:flex-row items-center gap-12 py-20"
+            className="container px-4 md:px-6 flex flex-col items-center gap-12 py-20"
           >
             <motion.div 
-              className="flex-1 space-y-8"
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              className="max-w-3xl space-y-8 text-center"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <motion.div 
@@ -65,7 +64,7 @@ export function HeroSection() {
                   </motion.span>
                 </motion.h1>
                 <motion.p 
-                  className="text-xl text-muted-foreground max-w-[600px]"
+                  className="text-xl text-muted-foreground mx-auto"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.6 }}
@@ -75,7 +74,7 @@ export function HeroSection() {
                 </motion.p>
               </div>
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-4 justify-center"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
@@ -91,46 +90,12 @@ export function HeroSection() {
                 </Button>
               </motion.div>
               <motion.div 
-                className="flex items-center gap-4 text-sm text-muted-foreground"
+                className="flex items-center gap-4 text-sm text-muted-foreground justify-center"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 2 }}
               >
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <motion.div 
-                      key={i}
-                      className="h-8 w-8 rounded-full border-2 border-background bg-muted overflow-hidden"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 2 + (i * 0.1) }}
-                    >
-                      <Image src={`/placeholder.svg?height=32&width=32&text=${i}`} alt="User" width={32} height={32} />
-                    </motion.div>
-                  ))}
-                </div>
                 <div>Trusted by 1000+ schools worldwide</div>
-              </motion.div>
-            </motion.div>
-            <motion.div 
-              className="flex-1 relative"
-              initial={{ x: 20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <motion.div 
-                className="relative z-10 rounded-xl border bg-white/50 dark:bg-black/20 backdrop-blur-sm shadow-xl overflow-hidden"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
-              >
-                <Image
-                  src="/placeholder.svg?height=600&width=600&text=Fidel+Dashboard"
-                  alt="Fidel Dashboard"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto"
-                />
               </motion.div>
             </motion.div>
           </motion.div>
