@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
+
+// Create a new ratelimiter that allows 3 requests per minute
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(2, '1 m'),
+  analytics: true,
+});
 
 // Create a transporter using Gmail SMTP
 const transporter = nodemailer.createTransport({
@@ -14,6 +23,17 @@ export async function POST(request: Request) {
     
     
     try {
+    // Rate limit by IP
+    const ip = request.headers.get('x-forwarded-for') || 'anonymous';
+    const { success } = await ratelimit.limit(ip);
+    
+    if (!success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again in 1 minute.' },
+        { status: 429 }
+      );
+    }
+
     // Get form data from request body
     const { name, email, message } = await request.json();
 
@@ -29,7 +49,7 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: process.env.RECIPIENT_EMAIL, // Your personal email address
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `Fidel Demo Request from ${name}`,
       text: `
         Name: ${name}
         Email: ${email}
@@ -38,7 +58,7 @@ export async function POST(request: Request) {
         ${message}
       `,
       html: `
-        <h3>New Contact Form Submission</h3>
+        <h3>Fidel Demo Request</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
