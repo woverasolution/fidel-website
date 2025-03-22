@@ -59,20 +59,18 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="flex flex-col min-h-screen bg-gradient-to-b from-background via-background/80 to-background/40">
+    <main className="flex flex-col min-h-screen bg-gradient-to-b from-primary/5 via-background/95 to-background">
       {/* Hero Section with Warm Gradient */}
       <section className="relative w-full py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              Let's Connect
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
+            
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-b from-blue-900 to-blue-800/70 bg-clip-text text-transparent">
               Get in Touch with Fidel
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Transform your school's management experience with Fidel. We're here to help you streamline your administrative tasks and enhance your educational journey.
+              Transform your school&apos;s management experience with Fidel. We&apos;re here to help you streamline your administrative tasks and enhance your educational journey.
             </p>
           </div>
         </div>
@@ -87,7 +85,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter text-foreground">Start Your Journey</h2>
                 <p className="text-lg text-muted-foreground">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </p>
               </div>
 
@@ -100,7 +98,7 @@ export default function ContactPage() {
                       </div>
                       <h3 className="text-2xl font-bold">Message Sent!</h3>
                       <p className="text-muted-foreground">
-                        Thank you for reaching out. We'll get back to you as soon as possible.
+                        Thank you for reaching out. We&apos;ll get back to you as soon as possible.
                       </p>
                       <Button onClick={() => setIsSubmitted(false)} variant="outline" className="mt-4">
                         Send Another Message
