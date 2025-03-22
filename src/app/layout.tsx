@@ -25,8 +25,7 @@ export default function RootLayout({
             {/* Header with subtle border */}
             <SiteHeader className="sticky top-0 z-50 border-b border-border/80 bg-white" />
             
-            {/* Top blue accent line */}
-            <div className="w-full h-1 bg-primary"></div>
+          
             
             {/* Main content */}
             <main className="flex-1 z-10">

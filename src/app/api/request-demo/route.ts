@@ -35,12 +35,12 @@ export async function POST(request: Request) {
     }
 
     // Get form data from request body
-    const { name, email, message } = await request.json();
+    const { name, email, message, schoolName, schoolType } = await request.json();
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !schoolName || !schoolType) {
       return NextResponse.json(
-        { error: 'Name, email, and message are required' },
+        { error: 'Name, email, message, school name, and school type are required' },
         { status: 400 }
       );
     }
@@ -49,10 +49,12 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: process.env.RECIPIENT_EMAIL, // Your personal email address
-      subject: `Fidel Demo Request from ${name}`,
+      subject: `Fidel Demo Request from ${name} - ${schoolName}`,
       text: `
         Name: ${name}
         Email: ${email}
+        School Name: ${schoolName}
+        School Type: ${schoolType}
         
         Message:
         ${message}
@@ -61,6 +63,8 @@ export async function POST(request: Request) {
         <h3>Fidel Demo Request</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>School Name:</strong> ${schoolName}</p>
+        <p><strong>School Type:</strong> ${schoolType}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
