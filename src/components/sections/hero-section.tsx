@@ -69,7 +69,7 @@ export function HeroSection() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.6 }}
                 >
-                  Fidel helps Ethiopian schools say goodbye to paperwork and complicated processes. With our intuitive and fully customizable system, you&apos;ll streamline administration, easily manage student records, track finances, and gain insightful analytics—freeing you to focus on quality education.
+                  Stop juggling paperwork and endless administrative headaches. Our school management system automates processes, ensures compliance with ETA regulations, and empowers decision-making, freeing you to focus on what really matters: your students.
                 </motion.p>
               </div>
               <motion.div 
@@ -85,7 +85,7 @@ export function HeroSection() {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-12 px-8 text-base" asChild>
-                  <Link href="/contact">Book Your Demo</Link>
+                  <Link href="/pricing">View Pricing</Link>
                 </Button>
               </motion.div>
               <motion.div 

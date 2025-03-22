@@ -68,31 +68,13 @@ export default function PricingPage() {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-background to-muted overflow-hidden">
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-grid-small-black/[0.05] -z-10" />
-          <div className="absolute h-full w-full bg-background [mask-image:radial-gradient(transparent,white)] -z-10" />
-        </div>
-        <div className="container px-4 md:px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
-              Simple Pricing
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-              Choose the right plan for your school
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              All plans include a 14-day free trial. No credit card required.
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Pricing Section with the new component */}
       <Pricing 
         plans={pricingPlans}
         title="Simple, Transparent Pricing"
-        description="Choose the plan that works for your educational institution.\nAll plans include core features and dedicated support."
+        description="Choose the plan that works for your educational institution."
       />
 
       {/* Comparison Section */}
