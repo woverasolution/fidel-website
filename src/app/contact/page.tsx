@@ -19,22 +19,44 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    // Clear error when user starts typing again
+    if (error) setError(null)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const response = await fetch('/api/request-demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
       setIsSubmitted(true)
       setFormData({ name: "", email: "", message: "" })
-    }, 1500)
+    } catch (error) {
+      console.error('Error sending message:', error)
+      setError(error instanceof Error ? error.message : 'Failed to send message. Please try again later.')
+      setIsSubmitted(false)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -91,6 +113,11 @@ export default function ContactPage() {
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {error && (
+                        <div className="p-3 text-sm bg-destructive/15 border border-destructive/30 text-destructive rounded-md">
+                          {error}
+                        </div>
+                      )}
                       <div className="space-y-2">
                         <Label htmlFor="name">Name</Label>
                         <Input
