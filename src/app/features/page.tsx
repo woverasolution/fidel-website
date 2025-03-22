@@ -84,7 +84,7 @@ export default function FeaturesPage() {
               Features that power educational excellence
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover how Fidel can transform your school's administrative processes and enhance the educational
+              Discover how Fidel can transform your school&apos;s administrative processes and enhance the educational
               experience.
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function FeaturesPage() {
               <div className="text-primary font-medium">Core Feature</div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Comprehensive Student Management</h2>
               <p className="text-muted-foreground text-lg">
-                Our student management module provides a complete view of each student's journey, from enrollment to
+                Our student management module provides a complete view of each student&apos;s journey, from enrollment to
                 graduation. Track academic progress, attendance, behavior, and more in one centralized system.
               </p>
               <ul className="space-y-4">
@@ -246,7 +246,7 @@ export default function FeaturesPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to see Fidel in action?</h2>
               <p className="text-primary-foreground/80 text-lg">
-                Schedule a personalized demo to see how Fidel can transform your school's management.
+                Schedule a personalized demo to see how Fidel can transform your school&apos;s management.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 md:justify-end">

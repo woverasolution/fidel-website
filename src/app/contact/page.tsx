@@ -52,7 +52,7 @@ export default function ContactPage() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">Contact Us</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have questions about Fidel? We're here to help. Reach out to our team and we'll get back to you as soon as
+              Have questions about Fidel? We&apos;re here to help. Reach out to our team and we&apos;ll get back to you as soon as
               possible.
             </p>
           </div>
@@ -68,9 +68,9 @@ export default function ContactPage() {
             <div>
               <div className="space-y-6 mb-8">
                 <div className="text-primary font-medium">Send us a message</div>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Let's start a conversation</h2>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Let&apos;s start a conversation</h2>
                 <p className="text-muted-foreground text-lg">
-                  Fill out the form below and we'll respond within 24 hours.
+                  Fill out the form below and we&apos;ll respond within 24 hours.
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
                       </div>
                       <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
                       <p className="text-muted-foreground mb-6">
-                        Thank you for reaching out. We'll get back to you as soon as possible.
+                        Thank you for reaching out. We&apos;ll get back to you as soon as possible.
                       </p>
                       <Button onClick={() => setIsSubmitted(false)} variant="outline">
                         Send Another Message

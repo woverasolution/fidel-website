@@ -105,7 +105,7 @@ export default function AboutPage() {
             <div className="text-primary font-medium">Our Mission & Values</div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">What drives us forward</h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto">
-              We're driven by a commitment to excellence in education through innovative technology.
+              We&apos;re driven by a commitment to excellence in education through innovative technology.
             </p>
           </div>
 

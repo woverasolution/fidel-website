@@ -69,7 +69,7 @@ export function HeroSection() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.6 }}
                 >
-                  Fidel is more than just a school management system; it's a partner in your educational journey. By
+                  Fidel is more than just a school management system; it&apos;s a partner in your educational journey. By
                   automating and streamlining administrative tasks, Fidel frees up time and resources.
                 </motion.p>
               </div>

@@ -83,7 +83,7 @@ export function Pricing({
         <span className="mr-2 font-semibold">Monthly</span>
         <Label className="relative inline-flex items-center cursor-pointer">
           <Switch
-            ref={switchRef as any}
+            ref={switchRef}
             checked={!isMonthly}
             onCheckedChange={handleToggle}
             className="relative"

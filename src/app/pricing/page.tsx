@@ -1,8 +1,7 @@
 import { Pricing } from "@/components/blocks/pricing"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Check, ArrowRight } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function PricingPage() {
   // Define the pricing plans for the new component
@@ -102,7 +101,7 @@ export default function PricingPage() {
             <div className="text-primary font-medium">Plan Comparison</div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Compare plan features</h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto">
-              Find the plan that's right for your school's needs and budget.
+              Find the plan that&apos;s right for your school&apos;s needs and budget.
             </p>
           </div>
 
@@ -229,7 +228,7 @@ export default function PricingPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to get started with Fidel?</h2>
               <p className="text-primary-foreground/80 text-lg">
-                Join thousands of schools already benefiting from Fidel's comprehensive management system.
+                Join thousands of schools already benefiting from Fidel&apos;s comprehensive management system.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 md:justify-end">

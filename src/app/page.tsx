@@ -1,8 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { BookOpen, Users, CreditCard, ArrowRight } from "lucide-react"
+import { Card } from "@/components/ui/card"
+import { ArrowRight } from "lucide-react"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ShowcaseSection } from "@/components/sections/showcase-section"
 import { FeaturesSection } from "@/components/sections/features-section"
@@ -92,8 +92,8 @@ export default function Home() {
                     ))}
                   </div>
                   <blockquote className="flex-1 text-lg mb-4">
-                    "Fidel has transformed how we manage our school. The administrative burden has been significantly
-                    reduced, allowing us to focus on what matters most: education."
+                    &quot;Fidel has transformed how we manage our school. The administrative burden has been significantly
+                    reduced, allowing us to focus on what matters most: education.&quot;
                   </blockquote>
                   <div className="flex items-center gap-4">
                     <div className="h-12 w-12 rounded-full overflow-hidden bg-muted">
@@ -128,7 +128,7 @@ export default function Home() {
                 Make data-driven decisions with powerful insights
               </h2>
               <p className="text-slate-300 text-lg">
-                Fidel's advanced analytics dashboard gives you a comprehensive view of your school's performance. Track
+                Fidel&apos;s advanced analytics dashboard gives you a comprehensive view of your school&apos;s performance. Track
                 student progress, monitor attendance, analyze financial data, and more—all in one place.
               </p>
               <ul className="space-y-3">
@@ -186,7 +186,7 @@ export default function Home() {
                 Ready to transform your school management?
               </h2>
               <p className="text-primary-foreground/80 text-lg">
-                Join thousands of schools already benefiting from Fidel's comprehensive management system.
+                Join thousands of schools already benefiting from Fidel&apos;s comprehensive management system.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 md:justify-end">
