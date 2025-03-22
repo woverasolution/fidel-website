@@ -7,29 +7,21 @@ import { ArrowRight, CheckCircle } from "lucide-react"
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      position: "CEO & Founder",
-      bio: "With over 15 years in EdTech, Sarah founded Fidel to revolutionize school management systems.",
+      name: "Silvio Martignetti",
+      position: "Co-Founder & Technoking",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
-      name: "Michael Chen",
-      position: "CTO",
-      bio: "Michael leads our technical team, bringing 12 years of software development experience to Fidel.",
+      name: "Temesgen Mulugeta",
+      position: "Co-Founder & Genius",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
-      name: "Priya Patel",
-      position: "Head of Product",
-      bio: "Priya ensures our products meet the real needs of educational institutions worldwide.",
+      name: "Tettemqe Endalamaw",
+      position: "Co-Founder & Vibe Checker",
       image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "David Okafor",
-      position: "Education Specialist",
-      bio: "Former school principal David brings invaluable insights from his 20 years in education.",
-      image: "/placeholder.svg?height=400&width=400",
-    },
+    }
+    
   ]
 
   return (

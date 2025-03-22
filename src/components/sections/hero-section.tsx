@@ -69,7 +69,7 @@ export function HeroSection() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.6 }}
                 >
-                  Fidel helps Ethiopian schools say goodbye to paperwork and complicated processes. With our intuitive and fully customizable system, you'll streamline administration, easily manage student records, track finances, and gain insightful analytics—freeing you to focus on quality education.
+                  Fidel helps Ethiopian schools say goodbye to paperwork and complicated processes. With our intuitive and fully customizable system, you&apos;ll streamline administration, easily manage student records, track finances, and gain insightful analytics—freeing you to focus on quality education.
                 </motion.p>
               </div>
               <motion.div 

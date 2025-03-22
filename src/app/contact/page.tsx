@@ -216,14 +216,7 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/placeholder.svg?height=400&width=800&text=Map"
-                  alt="Office Location Map"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              
             </div>
           </div>
         </div>
