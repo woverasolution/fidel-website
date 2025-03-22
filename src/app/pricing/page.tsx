@@ -8,16 +8,16 @@ export default function PricingPage() {
   const pricingPlans = [
     {
       name: "Starter",
-      price: "99",
-      yearlyPrice: "948",
+      price: "7899",
+      yearlyPrice: "6299",
       period: "month", 
       description: "Perfect for small schools with basic management needs",
       features: [
-        "Up to 200 student profiles",
+        "Up to 2000 student profiles",
         "Basic course management",
         "Simple fee tracking",
-        "Email support",
-        "Mobile app access"
+        "Heldesk support",
+        "Online payment integration"
       ],
       buttonText: "Get Started",
       href: "/contact",
@@ -25,12 +25,12 @@ export default function PricingPage() {
     },
     {
       name: "Professional",
-      price: "299",
-      yearlyPrice: "2868",
+      price: "8999",
+      yearlyPrice: "7499",
       period: "month",
       description: "Ideal for growing schools with more complex management needs",
       features: [
-        "Up to 1,000 student profiles",
+        "Up to 10,000 student profiles",
         "Advanced course management",
         "Complete financial system",
         "Attendance tracking",

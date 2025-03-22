@@ -14,7 +14,7 @@ import NumberFlow from "@number-flow/react";
 
 interface PricingPlan {
   name: string;
-  price: string;
+  price: string | null;   
   yearlyPrice: string;
   period: string;
   features: string[];
@@ -139,25 +139,29 @@ export function Pricing({
               </p>
               <div className="mt-6 flex items-center justify-center gap-x-2">
                 <span className="text-5xl font-bold tracking-tight text-foreground">
-                  <NumberFlow
-                    value={
-                      isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
-                    }
-                    format={{
-                      style: "currency",
-                      currency: "USD",
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    }}
-                    transformTiming={{
-                      duration: 500,
-                      easing: "ease-out",
-                    }}
-                    willChange
-                    className="tabular-nums"
-                  />
+                  {typeof plan.price === 'string' && !Number(plan.price) ? (
+                    plan.price
+                  ) : (
+                    <NumberFlow
+                      value={
+                        isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
+                      }
+                      format={{
+                        style: "currency",
+                        currency: "ETB",
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      }}
+                      transformTiming={{
+                        duration: 500,
+                        easing: "ease-out",
+                      }}
+                      willChange
+                      className="tabular-nums"
+                    />
+                  )}
                 </span>
-                {plan.period !== "Next 3 months" && (
+                {plan.period !== "Next 3 months" && plan.price !== "Custom" && (
                   <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
                     / {plan.period}
                   </span>
