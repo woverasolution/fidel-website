@@ -30,7 +30,7 @@ export function ShowcaseSection() {
         transition={{ duration: 0.7, delay: 0.2 }}
         className="max-w-3xl mx-auto text-base md:text-xl text-slate-400"
       >
-        A complete solution that gives administrators, teachers, and parents the tools they need to focus on what really matters — education.
+       
       </motion.p>
     </div>
   );

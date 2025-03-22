@@ -181,8 +181,8 @@ export default function ContactPage() {
                     </div>
                     <h3 className="text-lg font-bold mb-2">Email</h3>
                     <p className="text-muted-foreground mb-4">For general inquiries and support</p>
-                    <a href="mailto:info@fideleducation.com" className="text-primary font-medium">
-                      info@fideleducation.com
+                    <a href="mailto:info@fidel.et" className="text-primary font-medium">
+                      info@fidel.et
                     </a>
                   </CardContent>
                 </Card>
@@ -193,9 +193,9 @@ export default function ContactPage() {
                       <Phone className="h-6 w-6" />
                     </div>
                     <h3 className="text-lg font-bold mb-2">Phone</h3>
-                    <p className="text-muted-foreground mb-4">Mon-Fri from 9am to 6pm (PST)</p>
-                    <a href="tel:+15551234567" className="text-primary font-medium">
-                      +1 (555) 123-4567
+                    <p className="text-muted-foreground mb-4">Mon-Fri from 9am to 6pm</p>
+                    <a href="tel:+251910428013" className="text-primary font-medium">
+                      +251 910 428 013
                     </a>
                   </CardContent>
                 </Card>
@@ -207,13 +207,11 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">Office Location</h3>
-                  <p className="text-muted-foreground mb-4">Come visit our headquarters</p>
+                  <p className="text-muted-foreground mb-4">Come visit our office</p>
                   <address className="not-italic">
-                    123 Education Lane
+                    Wessen Area, Brix Building, 1st floor
                     <br />
-                    Suite 400
-                    <br />
-                    San Francisco, CA 94107
+                    Addis Ababa, Ethiopia
                   </address>
                 </CardContent>
               </Card>
@@ -259,7 +257,7 @@ export default function ContactPage() {
               {
                 question: "Do you offer technical support?",
                 answer:
-                  "Yes, we provide technical support to all our clients. Support hours are Monday to Friday, 9am to 6pm (PST).",
+                  "Yes, we provide technical support to all our clients. Support hours are Monday to Friday, 9am to 6pm.",
               },
               {
                 question: "Can I schedule a demo?",

@@ -2,7 +2,8 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Users, CreditCard, ArrowRight } from "lucide-react";
+import { Workflow, ShieldCheck, LineChart, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -40,32 +41,31 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="text-blue-400 font-medium">Key Features</div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
-            Everything you need to manage your school
-          </h2>
+          <div className="text-blue-400 font-medium">The best school management system in Ethiopia</div>
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
+            Here is what sets us apart
+          </h1>
           <p className="text-slate-300 text-lg max-w-[800px] mx-auto">
-            Fidel provides a comprehensive suite of tools designed to streamline school operations and enhance the
-            educational experience.
+          Our school management system is built specifically for schools in Ethiopia. We replace inefficiency, chaos, and compliance headaches with clarity, organization, and automation.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: <Users className="h-6 w-6" />,
-              title: "Student Registration",
-              description: "Streamline the student onboarding process with our intuitive registration system. Collect all necessary information, documents, and payments in one place."
+              icon: <Workflow className="h-6 w-6" />,
+              title: "Automation at Its Best",
+              description: "Simplify student admission, attendance, grading, and fee collection with our intuitive workflows."
             },
             {
-              icon: <BookOpen className="h-6 w-6" />,
-              title: "Course Management",
-              description: "Easily create, update, and manage courses. Assign teachers, schedule classes, and track student progress all from a single dashboard."
+              icon: <ShieldCheck className="h-6 w-6" />,
+              title: "ETA Compliance, Guaranteed",
+              description: "Our software is specifically designed to meet Ethiopia's education standards and registrar requirements."
             },
             {
-              icon: <CreditCard className="h-6 w-6" />,
-              title: "Tuition Payments",
-              description: "Simplify fee collection with our integrated payment system. Send automated reminders, track payments, and generate financial reports with ease."
+              icon: <LineChart className="h-6 w-6" />,
+              title: "Real-Time Data Insights",
+              description: "Access key performance metrics to make smarter, data-driven decisions."
             }
           ].map((feature, index) => (
             <motion.div
@@ -94,6 +94,24 @@ export function FeaturesSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <Button
+            size="lg"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-8"
+            asChild
+          >
+            <Link href="/features">
+              Explore All Features
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </motion.div>
       </motion.div>
     </motion.section>
   );

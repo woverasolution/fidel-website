@@ -37,7 +37,7 @@ export function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80"
               >
-                Introducing Fidel 2.0
+                Now Available: Fidel 2.0
               </motion.div>
               <div className="space-y-4">
                 <motion.h1 
@@ -60,7 +60,7 @@ export function HeroSection() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1.4 }}
                   >
-                    Transforming School Management
+                    Simplifying School Management in Ethiopia
                   </motion.span>
                 </motion.h1>
                 <motion.p 
@@ -69,8 +69,7 @@ export function HeroSection() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.6 }}
                 >
-                  Fidel is more than just a school management system; it&apos;s a partner in your educational journey. By
-                  automating and streamlining administrative tasks, Fidel frees up time and resources.
+                  Fidel helps Ethiopian schools say goodbye to paperwork and complicated processes. With our intuitive and fully customizable system, you'll streamline administration, easily manage student records, track finances, and gain insightful analytics—freeing you to focus on quality education.
                 </motion.p>
               </div>
               <motion.div 
@@ -81,12 +80,12 @@ export function HeroSection() {
               >
                 <Button size="lg" className="h-12 px-8 text-base" asChild>
                   <Link href="/features">
-                    Explore Features
+                    Discover Fidel
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-12 px-8 text-base" asChild>
-                  <Link href="/contact">Request Demo</Link>
+                  <Link href="/contact">Book Your Demo</Link>
                 </Button>
               </motion.div>
               <motion.div 
@@ -95,7 +94,7 @@ export function HeroSection() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 2 }}
               >
-                <div>Trusted by 1000+ schools worldwide</div>
+                <div>Proudly trusted by leading schools across Ethiopia</div>
               </motion.div>
             </motion.div>
           </motion.div>
