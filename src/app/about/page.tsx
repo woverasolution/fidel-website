@@ -228,7 +228,7 @@ export default function AboutPage() {
                 <div className="mt-4">
                   <h3 className="text-xl font-bold">{member.name}</h3>
                   <p className="text-primary font-medium">{member.position}</p>
-                  <p className="text-muted-foreground mt-2">{member.bio}</p>
+                
                 </div>
               </div>
             ))}
