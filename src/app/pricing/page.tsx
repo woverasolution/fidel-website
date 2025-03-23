@@ -88,7 +88,58 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-xl border shadow-lg">
+          {/* Mobile view */}
+          <div className="block md:hidden">
+            <div className="space-y-8">
+              {[{ name: "Starter" }, { name: "Professional", popular: true }, { name: "Enterprise" }].map((plan, i) => (
+                <div key={i} className={`rounded-xl border ${plan.popular ? "bg-primary/5" : "bg-muted/30"}`}>
+                  <div className={`p-6 border-b ${plan.popular ? "bg-primary/10" : "bg-muted/30"}`}>
+                    <h3 className={`text-lg font-bold text-center ${plan.popular ? "text-primary" : ""}`}>{plan.name}</h3>
+                  </div>
+                  <div className="divide-y">
+                    {[
+                      {
+                        feature: "Student Profiles",
+                        value: plan.name === "Starter" ? "Up to 200" : plan.name === "Professional" ? "Up to 1,000" : "Unlimited"
+                      },
+                      {
+                        feature: "Course Management",
+                        value: plan.name === "Starter" ? "Basic" : plan.name === "Professional" ? "Advanced" : "Advanced + Custom"
+                      },
+                      {
+                        feature: "Financial System",
+                        value: plan.name === "Starter" ? "Simple" : plan.name === "Professional" ? "Complete" : "Complete + Custom"
+                      },
+                      {
+                        feature: "Support",
+                        value: plan.name === "Starter" ? "Email only" : plan.name === "Professional" ? "Email & Phone" : "24/7 Premium"
+                      },
+                      {
+                        feature: "Integrations",
+                        value: plan.name === "Starter" ? "None" : plan.name === "Professional" ? "Limited" : "Custom"
+                      },
+                      {
+                        feature: "Reporting",
+                        value: plan.name === "Starter" ? "Basic" : plan.name === "Professional" ? "Advanced" : "Custom"
+                      },
+                      {
+                        feature: "Mobile App",
+                        value: plan.name === "Starter" ? "Basic access" : plan.name === "Professional" ? "Full access" : "Full access + Custom"
+                      }
+                    ].map((row, j) => (
+                      <div key={j} className="p-6">
+                        <div className="font-medium mb-2">{row.feature}</div>
+                        <div className="text-muted-foreground">{row.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop view */}
+          <div className="hidden md:block relative overflow-hidden rounded-xl border shadow-lg">
             <div className="grid grid-cols-4 divide-x">
               <div className="p-6 bg-muted/30">
                 <div className="h-6"></div>
@@ -166,7 +217,7 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto grid gap-8">
+          <div className="max-w-3xl mx-auto grid gap-4">
             {[
               {
                 question: "Can I switch plans later?",
@@ -194,10 +245,32 @@ export default function PricingPage() {
               },
             ].map((item, i) => (
               <Card key={i} className="border-none shadow-lg bg-background">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{item.question}</h3>
-                  <p className="text-muted-foreground">{item.answer}</p>
-                </CardContent>
+                <details className="group">
+                  <summary className="p-6 flex items-center justify-between cursor-pointer list-none">
+                    <h3 className="text-xl font-bold">{item.question}</h3>
+                    <div className="transform transition-transform duration-200 group-open:rotate-180">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="text-muted-foreground"
+                      >
+                        <path
+                          d="M6 9L12 15L18 9"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </summary>
+                  <div className="px-6 pb-6">
+                    <p className="text-muted-foreground">{item.answer}</p>
+                  </div>
+                </details>
               </Card>
             ))}
           </div>
