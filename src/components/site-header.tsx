@@ -3,11 +3,11 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { Menu, X, Home, Layout, Info, Mail, ArrowRight, Sparkles } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
+import { Menu, X, Home, Layout, Info, Mail, ArrowRight, Sparkles, DollarSign } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+
 
 export function SiteHeader({ className }: { className?: string }) {
   const pathname = usePathname()
@@ -16,6 +16,7 @@ export function SiteHeader({ className }: { className?: string }) {
   const routes = [
     { href: "/", label: "Home", icon: Home },
     { href: "/features", label: "Features", icon: Layout },
+    { href: "/pricing", label: "Pricing", icon: DollarSign },
     { href: "/about", label: "About", icon: Info },
     { href: "/contact", label: "Contact", icon: Mail }
   ]
@@ -27,7 +28,7 @@ export function SiteHeader({ className }: { className?: string }) {
   return (
     <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
       <div className="relative w-full">
-        <div className="absolute inset-x-0 -top-1 bg-gradient-to-r from-primary/80 via-primary to-primary/80">
+        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80">
           <div className="container flex items-center h-8 px-4 text-sm text-primary-foreground">
             <Sparkles className="w-4 h-4 mr-2" />
             <span className="font-medium">Now available Fidel 2.0</span>
