@@ -178,66 +178,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Comparison Section */}
-      <section className="w-full py-24 bg-background">
-        <div className="container px-4 md:px-6">
-          <div className="text-center space-y-4 mb-16">
-            <div className="text-primary font-medium">Why Choose Fidel</div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">The Fidel advantage</h2>
-            <p className="text-muted-foreground text-lg max-w-[800px] mx-auto">
-              See how Fidel compares to traditional school management approaches.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-xl border shadow-lg">
-            <div className="grid grid-cols-3 divide-x">
-              <div className="p-6 bg-muted/30">
-                <div className="h-6"></div>
-              </div>
-              <div className="p-6 bg-muted/30">
-                <h3 className="text-lg font-bold text-center">Traditional Systems</h3>
-              </div>
-              <div className="p-6 bg-primary/10">
-                <h3 className="text-lg font-bold text-center text-primary">Fidel</h3>
-              </div>
-            </div>
-
-            {[
-              {
-                feature: "Setup Time",
-                traditional: "Weeks to months",
-                fidel: "Days",
-              },
-              {
-                feature: "User Experience",
-                traditional: "Complex, steep learning curve",
-                fidel: "Intuitive, user-friendly",
-              },
-              {
-                feature: "Accessibility",
-                traditional: "Limited to on-premise",
-                fidel: "Anywhere, any device",
-              },
-              {
-                feature: "Updates",
-                traditional: "Manual, infrequent",
-                fidel: "Automatic, continuous",
-              },
-              {
-                feature: "Support",
-                traditional: "Limited hours, additional cost",
-                fidel: "24/7, included",
-              },
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-3 divide-x border-t">
-                <div className="p-6 font-medium">{row.feature}</div>
-                <div className="p-6 text-muted-foreground">{row.traditional}</div>
-                <div className="p-6 bg-primary/5">{row.fidel}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="w-full py-24 bg-primary text-primary-foreground">

@@ -96,19 +96,19 @@ export function FeaturesSection() {
         </div>
 
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <Button
-            size="lg"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-8"
+            size="lg" 
+            className="bg-blue-500 hover:bg-blue-600 text-white px-12 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-xl"
             asChild
           >
             <Link href="/features">
               Explore All Features
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </motion.div>

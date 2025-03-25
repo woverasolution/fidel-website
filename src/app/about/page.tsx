@@ -10,16 +10,19 @@ export default function AboutPage() {
       name: "Silvio Martignetti",
       position: "Co-Founder & Technoking",
       image: "/placeholder.svg?height=400&width=400",
+      linkedIn: "#",
     },
     {
       name: "Temesgen Mulugeta",
       position: "Co-Founder & Genius",
       image: "/placeholder.svg?height=400&width=400",
+      linkedIn: "#",
     },
     {
       name: "Tettemqe Endalamaw",
       position: "Co-Founder & Vibe Checker",
       image: "/placeholder.svg?height=400&width=400",
+      linkedIn: "#",
     }
     
   ]
@@ -66,14 +69,13 @@ export default function AboutPage() {
               <div className="text-primary font-medium">Our Story</div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">From vision to reality</h2>
               <p className="text-muted-foreground text-lg">
-                Fidel was founded in 2018 with a clear mission: to simplify school administration and enhance the
-                educational experience. We recognized that educators were spending too much time on administrative tasks
-                and not enough time teaching.
+                At Fidel, we believe managing schools shouldn’t feel like herding cats through a maze blindfolded. 
+                That’s why we created a beautifully simple yet powerfully intuitive school management system that streamlines life for everyone—from exhausted educators 
+                and busy back-office heroes to ambitious students and forward-thinking school owners.
               </p>
               <p className="text-muted-foreground text-lg">
-                Our team of educators and technologists came together to build a solution that addresses the real
-                challenges faced by schools around the world. What started as a simple student management tool has
-                evolved into a comprehensive platform serving hundreds of educational institutions globally.
+                Fidel, born our of Wovera's suite of products, is proudly Ethiopian-made, designed specifically for the unique needs of our local schools. 
+                The company behind Fidel, Wovera Solutions, was founded by three friends who, since their caffeine-fueled college days, dreamed of shaking things up with homegrown software solutions that empower Ethiopian businesses to supercharge revenue and make smart, data-driven decisions.
               </p>
               <p className="text-muted-foreground text-lg">
                 Today, Fidel continues to innovate and expand, always guided by our core belief that better school
@@ -215,8 +217,14 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="group relative">
-                <div className="aspect-square overflow-hidden rounded-xl bg-muted/30">
+              <Link
+                key={index}
+                href={member.linkedIn}
+                className="group relative block transition-all duration-200 hover:scale-[1.02] rounded-xl bg-muted/5 hover:bg-muted/10 active:bg-muted/15 p-4 border border-transparent hover:border-muted"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="aspect-square overflow-hidden rounded-xl bg-muted/30 relative">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
@@ -224,13 +232,48 @@ export default function AboutPage() {
                     height={400}
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-3 right-3 bg-background/90 backdrop-blur-sm text-primary p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-5 w-5"
+                    >
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect width="4" height="12" x="2" y="9" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="mt-4">
-                  <h3 className="text-xl font-bold">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.position}</p>
-                
+                <div className="mt-4 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{member.name}</h3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors group-hover:translate-x-1 duration-300"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </div>
+                  <p className="text-muted-foreground group-hover:text-primary/80 transition-colors">{member.position}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
