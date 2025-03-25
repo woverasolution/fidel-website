@@ -69,12 +69,12 @@ export default function AboutPage() {
               <div className="text-primary font-medium">Our Story</div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">From vision to reality</h2>
               <p className="text-muted-foreground text-lg">
-                At Fidel, we believe managing schools shouldn’t feel like herding cats through a maze blindfolded. 
-                That’s why we created a beautifully simple yet powerfully intuitive school management system that streamlines life for everyone—from exhausted educators 
+                At Fidel, we believe managing schools shouldn&apos;t feel like herding cats through a maze blindfolded. 
+                That&apos;s why we created a beautifully simple yet powerfully intuitive school management system that streamlines life for everyone—from exhausted educators 
                 and busy back-office heroes to ambitious students and forward-thinking school owners.
               </p>
               <p className="text-muted-foreground text-lg">
-                Fidel, born our of Wovera's suite of products, is proudly Ethiopian-made, designed specifically for the unique needs of our local schools. 
+                Fidel, born our of Wovera&apos;s suite of products, is proudly Ethiopian-made, designed specifically for the unique needs of our local schools. 
                 The company behind Fidel, Wovera Solutions, was founded by three friends who, since their caffeine-fueled college days, dreamed of shaking things up with homegrown software solutions that empower Ethiopian businesses to supercharge revenue and make smart, data-driven decisions.
               </p>
               <p className="text-muted-foreground text-lg">
