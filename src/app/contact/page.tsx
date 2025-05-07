@@ -61,12 +61,12 @@ export default function ContactPage() {
   return (
     <main className="flex flex-col min-h-screen bg-gradient-to-b from-primary/5 via-background/95 to-background">
       {/* Hero Section with Warm Gradient */}
-      <section className="relative w-full py-24 overflow-hidden">
+      <section className="relative w-full py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto">
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-b from-blue-900 to-blue-800/70 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-foreground">
               Get in Touch with Fidel
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
@@ -77,7 +77,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="w-full py-12 md:py-24 relative">
+      <section className="w-full pt-12 pb-16 md:pt-16 md:pb-24 relative">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Contact Form */}
