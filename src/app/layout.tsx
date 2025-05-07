@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
+import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -14,12 +15,15 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className={cn(
+          "min-h-screen bg-background font-sans antialiased pt-24 md:pt-22", // pt-24 (6rem) for mobile, md:pt-22 (5.5rem) for desktop
+          inter.className
+        )}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="relative flex min-h-screen flex-col">
             {/* Header with subtle border */}

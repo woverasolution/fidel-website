@@ -25,16 +25,22 @@ export function SiteHeader({ className }: { className?: string }) {
   }
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
-      <div className="relative w-full">
-        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80">
+    <header className={cn(
+      "sticky md:fixed md:left-1/2 md:-translate-x-1/2 md:top-6 md:w-auto md:z-50",
+      "top-0 z-50 w-full border-b md:border md:rounded-full md:shadow-xl",
+      "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80",
+      "transition-all duration-300 ease-in-out", 
+      className
+    )}>
+      <div className="relative w-full md:w-auto">
+        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80 md:hidden">
           <div className="container flex items-center h-8 px-4 text-sm text-primary-foreground">
             <Sparkles className="w-4 h-4 mr-2" />
             <span className="font-medium">Now available Fidel 2.0</span>
           </div>
         </div>
       </div>
-      <div className="container flex h-16 items-center mt-7 md:mt-0">
+      <div className="container flex h-16 items-center mt-8 md:mt-0 md:px-6">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="font-bold text-xl">Fidel</span>
         </Link>
@@ -51,11 +57,6 @@ export function SiteHeader({ className }: { className?: string }) {
                 {route.label}
               </Link>
             ))}
-          </div>
-          <div className="flex items-center gap-4">
-            <Button asChild>
-              <Link href="/contact">Request Demo</Link>
-            </Button>
           </div>
         </nav>
         <div className="flex flex-1 items-center justify-end md:hidden">
@@ -120,11 +121,11 @@ export function SiteHeader({ className }: { className?: string }) {
                   </div>
                   
                   <div className="mt-auto mb-6 pt-6 border-t">
-                    <Button className="w-full" size="lg" asChild>
+                    {/* <Button className="w-full" size="lg" asChild>
                       <Link href="/contact" onClick={handleLinkClick}>
                         Request Demo
                       </Link>
-                    </Button>
+                    </Button> */}
                   </div>
                 </nav>
               </div>
