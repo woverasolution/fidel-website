@@ -17,7 +17,6 @@ export function SiteHeader({ className }: { className?: string }) {
     { href: "/", label: "Home", icon: Home },
     { href: "/features", label: "Features", icon: Layout },
     { href: "/pricing", label: "Pricing", icon: DollarSign },
-    { href: "/about", label: "About", icon: Info },
     { href: "/contact", label: "Contact", icon: Mail }
   ]
 
