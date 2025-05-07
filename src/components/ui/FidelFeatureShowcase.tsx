@@ -11,7 +11,6 @@ import {
   MessageSquare, 
   Bell, 
   Settings, 
-  Badge
 } from "lucide-react";
 
 export function FidelFeatureShowcase() {
