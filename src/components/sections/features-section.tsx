@@ -103,7 +103,7 @@ export function FeaturesSection() {
         >
           <Button
             size="lg" 
-            className="bg-blue-500 hover:bg-blue-600 text-white px-12 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-xl"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-xl"
             asChild
           >
             <Link href="/features">

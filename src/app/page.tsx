@@ -3,7 +3,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { HeroSection } from "@/components/sections/hero-section"
-import { ShowcaseSection } from "@/components/sections/showcase-section"
 import { FeaturesSection } from "@/components/sections/features-section"
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Showcase Section with Laptop Animation */}
-      <ShowcaseSection />
+      {/* <ShowcaseSection /> */}
 
       {/* Key Features Section with Dark Theme and Scroll Animations */}
       <FeaturesSection />
@@ -121,7 +120,12 @@ export default function Home() {
             <p className="text-primary-foreground/80 text-lg">
               Experience firsthand how Fidel can ease your administrative workload.
             </p>
-            <Button size="lg" variant="secondary" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              asChild
+            >
               <Link href="/contact">Request a Free Demo</Link>
             </Button>
           </div>
