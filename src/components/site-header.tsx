@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
-import { Menu, X, Home, Layout, Info, Mail, ArrowRight, Sparkles, DollarSign } from "lucide-react"
+import { Menu, X, Home, Layout, Mail, ArrowRight, Sparkles, DollarSign } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 
@@ -26,40 +26,45 @@ export function SiteHeader({ className }: { className?: string }) {
 
   return (
     <header className={cn(
-      "sticky md:fixed md:left-1/2 md:-translate-x-1/2 md:top-6 md:w-auto md:z-50",
-      "top-0 z-50 w-full border-b md:border md:rounded-full md:shadow-xl",
-      "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80",
-      "transition-all duration-300 ease-in-out", 
+      "sticky top-0 w-full z-50 border-b md:border-none",
+      "md:fixed md:top-0 md:left-0 md:w-full md:h-16 md:bg-sky-200/20",
       className
     )}>
-      <div className="relative w-full md:w-auto">
-        <div className="absolute inset-x-0 top-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80 md:hidden">
-          <div className="container flex items-center h-8 px-4 text-sm text-primary-foreground">
-            <Sparkles className="w-4 h-4 mr-2" />
-            <span className="font-medium">Now available Fidel 2.0</span>
-          </div>
+      <div className="md:hidden absolute inset-x-0 top-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80">
+        <div className="container flex items-center h-8 px-4 text-sm text-primary-foreground">
+          <Sparkles className="w-4 h-4 mr-2" />
+          <span className="font-medium">Now available Fidel 2.0</span>
         </div>
       </div>
-      <div className="container flex h-16 items-center mt-8 md:mt-0 md:px-6">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold text-xl">Fidel</span>
-        </Link>
-        <nav className="hidden md:flex flex-1 items-center justify-between">
-          <div className="flex gap-6">
+
+      <div className={cn(
+        "relative flex h-16 items-center mt-8",
+        "md:container md:mx-auto md:mt-0 md:h-12 md:w-auto md:max-w-screen-md md:px-6 md:rounded-full md:bg-white md:shadow-xl md:my-2"
+      )}>
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center space-x-2 mr-6" onClick={handleLinkClick}>
+            <span className="font-bold text-xl">Fidel</span>
+          </Link>
+        </div>
+
+        <nav className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="flex items-center gap-x-6 lg:gap-x-8">
             {routes.map((route) => (
               <Link
                 key={route.href}
                 href={route.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
                   pathname === route.href ? "text-primary font-semibold" : "text-muted-foreground"
-                }`}
+                )}
               >
                 {route.label}
               </Link>
             ))}
           </div>
         </nav>
-        <div className="flex flex-1 items-center justify-end md:hidden">
+
+        <div className="md:hidden ml-auto">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button 

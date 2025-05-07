@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(
-          "min-h-screen bg-background font-sans antialiased pt-24 md:pt-22", // pt-24 (6rem) for mobile, md:pt-22 (5.5rem) for desktop
+          "min-h-screen bg-background font-sans antialiased pt-24 md:pt-16", // pt-24 (6rem) for mobile, md:pt-16 (4rem) for desktop
           inter.className
         )}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
