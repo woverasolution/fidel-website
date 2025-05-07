@@ -29,8 +29,8 @@ export function FidelFeatureShowcase() {
       icon: <BookOpen className="h-6 w-6" />,
     },
     {
-      title: "Scheduling System",
-      description: "Intuitive calendar interface for class scheduling, events, and academic planning.",
+      title: "Robust Workflows",
+      description: "Intuitive workflows for registering students, enrolling them in courses, and managing their progress.",
       icon: <Calendar className="h-6 w-6" />,
     },
     {
@@ -49,8 +49,8 @@ export function FidelFeatureShowcase() {
       icon: <MessageSquare className="h-6 w-6" />,
     },
     {
-      title: "Notification System",
-      description: "Automated alerts for important events, deadlines, and announcements.",
+      title: "National ID Integration",
+      description: "Direct API access to the national ID database for seamless adherence to Fayda verification",
       icon: <Bell className="h-6 w-6" />,
     },
     {
@@ -64,20 +64,6 @@ export function FidelFeatureShowcase() {
     <div className="w-full py-20 bg-background">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
-          <div className="flex gap-4 flex-col items-start">
-            <div>
-              <Badge>Features</Badge>
-            </div>
-            <div className="flex gap-2 flex-col">
-              <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-bold text-left">
-                Fidel School Management System
-              </h2>
-              <p className="text-lg max-w-xl lg:max-w-2xl leading-relaxed tracking-tight text-muted-foreground text-left">
-                A comprehensive solution designed to streamline school administration, enhance communication, and improve educational outcomes.
-              </p>
-            </div>
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10">
             {features.map((feature, index) => (
               <FeatureCard 
