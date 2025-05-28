@@ -1,35 +1,60 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
-import { Menu, X, Home, Layout, Mail, ArrowRight, Sparkles, DollarSign } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useState } from "react"
-
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Menu,
+  X,
+  Home,
+  Layout,
+  Mail,
+  ArrowRight,
+  Sparkles,
+  DollarSign,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export function SiteHeader({ className }: { className?: string }) {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const routes = [
     { href: "/", label: "Home", icon: Home },
     { href: "/features", label: "Features", icon: Layout },
     { href: "/pricing", label: "Pricing", icon: DollarSign },
-    { href: "/contact", label: "Contact", icon: Mail }
-  ]
+    { href: "/contact", label: "Contact", icon: Mail },
+  ];
 
   const handleLinkClick = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className={cn(
-      "sticky top-0 w-full z-50 border-b md:border-none",
-      "md:fixed md:top-0 md:left-0 md:w-full md:h-16 md:bg-sky-200/20",
-      className
-    )}>
+    <header
+      className={cn(
+        "sticky top-0 w-full z-50 border-b md:border-none transition-all duration-300",
+        "md:fixed md:top-0 md:left-0 md:w-full md:h-25 ",
+        isScrolled
+          ? "md:bg-white/10 md:backdrop-blur-lg md:shadow-lg md:border-b md:border-white/20"
+          : "md:bg-transparent md:pt-5",
+        className
+      )}
+    >
       <div className="md:hidden absolute inset-x-0 top-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80">
         <div className="container flex items-center h-8 px-4 text-sm text-primary-foreground">
           <Sparkles className="w-4 h-4 mr-2" />
@@ -37,13 +62,28 @@ export function SiteHeader({ className }: { className?: string }) {
         </div>
       </div>
 
-      <div className={cn(
-        "relative flex h-16 items-center mt-8",
-        "md:container md:mx-auto md:mt-0 md:h-12 md:w-auto md:max-w-screen-md md:px-6 md:rounded-full md:bg-white md:shadow-xl md:my-2"
-      )}>
+      <div
+        className={cn(
+          "relative flex h-16 items-center transition-all duration-300",
+          "md:container md:mx-auto md:mt-0 md:h-12 md:w-auto md:max-w-screen-md md:px-6 md:rounded-full md:my-2  md:border",
+          isScrolled
+            ? "md:bg-white/90 md:backdrop-blur-sm md:shadow-xl md:border md:border-white/30"
+            : "md:bg-white md:shadow-xl"
+        )}
+      >
         <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-2 mr-6" onClick={handleLinkClick}>
-            <span className="font-bold text-xl">Fidel</span>
+          <Link
+            href="/"
+            className="flex items-center space-x-2 mr-6"
+            onClick={handleLinkClick}
+          >
+            <Image
+              src="/fidel-logo-2.png"
+              alt="Fidel Logo"
+              className="ml-4 md:ml-0"
+              width={50}
+              height={50}
+            />
           </Link>
         </div>
 
@@ -55,7 +95,9 @@ export function SiteHeader({ className }: { className?: string }) {
                 href={route.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === route.href ? "text-primary font-semibold" : "text-muted-foreground"
+                  pathname === route.href
+                    ? "text-primary font-semibold"
+                    : "text-muted-foreground"
                 )}
               >
                 {route.label}
@@ -67,40 +109,50 @@ export function SiteHeader({ className }: { className?: string }) {
         <div className="md:hidden ml-auto">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 className="relative hover:bg-accent transition-colors duration-200"
                 aria-label="Toggle Menu"
               >
                 <div className="relative p-1">
-                  <Menu className={cn(
-                    "h-5 w-5 transition-all duration-150 ease-in-out",
-                    isOpen ? "opacity-0 rotate-90 scale-95" : "opacity-100 rotate-0 scale-100"
-                  )} />
-                  <X className={cn(
-                    "h-5 w-5 absolute top-1 left-1 transition-all duration-150 ease-in-out",
-                    isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-90 scale-95"
-                  )} />
+                  <Menu
+                    className={cn(
+                      "h-5 w-5 transition-all duration-150 ease-in-out",
+                      isOpen
+                        ? "opacity-0 rotate-90 scale-95"
+                        : "opacity-100 rotate-0 scale-100"
+                    )}
+                  />
+                  <X
+                    className={cn(
+                      "h-5 w-5 absolute top-1 left-1 transition-all duration-150 ease-in-out",
+                      isOpen
+                        ? "opacity-100 rotate-0 scale-100"
+                        : "opacity-0 rotate-90 scale-95"
+                    )}
+                  />
                 </div>
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent 
-              side="right" 
+            <SheetContent
+              side="right"
               className="w-[280px] sm:w-[350px] border-l p-0"
             >
               <div className="h-full flex flex-col">
                 <div className="p-6 bg-primary/5 border-b">
                   <div className="flex items-center space-x-2 text-primary">
                     <Sparkles className="w-4 h-4" />
-                    <span className="font-medium text-sm">Now available Fidel 2.0</span>
+                    <span className="font-medium text-sm">
+                      Now available Fidel 2.0
+                    </span>
                   </div>
                 </div>
                 <nav className="flex-1 flex flex-col px-6">
                   <div className="space-y-2 mt-6">
                     {routes.map((route) => {
-                      const Icon = route.icon
+                      const Icon = route.icon;
                       return (
                         <Link
                           key={route.href}
@@ -109,29 +161,33 @@ export function SiteHeader({ className }: { className?: string }) {
                           className={cn(
                             "group flex items-center py-3 px-4 rounded-lg transition-all duration-200",
                             "hover:bg-primary/5 hover:text-primary",
-                            pathname === route.href 
-                              ? "bg-primary/10 text-primary font-semibold" 
+                            pathname === route.href
+                              ? "bg-primary/10 text-primary font-semibold"
                               : "text-muted-foreground"
                           )}
                         >
                           <Icon className="w-5 h-5 mr-3 transition-transform duration-200" />
-                          <span className="flex-1 text-base">{route.label}</span>
-                          <ArrowRight className={cn(
-                            "w-4 h-4 transition-all duration-200 opacity-0 -translate-x-2",
-                            "group-hover:opacity-100 group-hover:translate-x-0"
-                          )} />
+                          <span className="flex-1 text-base">
+                            {route.label}
+                          </span>
+                          <ArrowRight
+                            className={cn(
+                              "w-4 h-4 transition-all duration-200 opacity-0 -translate-x-2",
+                              "group-hover:opacity-100 group-hover:translate-x-0"
+                            )}
+                          />
                         </Link>
-                      )
+                      );
                     })}
                   </div>
-                  
-                  <div className="mt-auto mb-6 pt-6 border-t">
+
+                  {/* <div className="mt-auto mb-6 pt-6 border-t">
                     {/* <Button className="w-full" size="lg" asChild>
                       <Link href="/contact" onClick={handleLinkClick}>
                         Request Demo
                       </Link>
-                    </Button> */}
-                  </div>
+                    </Button> 
+                  </div> */}
                 </nav>
               </div>
             </SheetContent>
@@ -139,6 +195,5 @@ export function SiteHeader({ className }: { className?: string }) {
         </div>
       </div>
     </header>
-  )
+  );
 }
-

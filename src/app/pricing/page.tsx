@@ -1,6 +1,5 @@
 import { Pricing } from "@/components/blocks/pricing"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { CTASection } from "@/components/sections/cta-section"
 import { Card } from "@/components/ui/card"
 
 export default function PricingPage() {
@@ -119,7 +118,7 @@ export default function PricingPage() {
                   "Yes, you can cancel your subscription at any time. We don't lock you into long-term contracts.",
               },
             ].map((item, i) => (
-              <Card key={i} className="border-none shadow-lg bg-background">
+              <Card key={i} className="border shadow-lg bg-background">
                 <details className="group">
                   <summary className="p-6 flex items-center justify-between cursor-pointer list-none">
                     <h3 className="text-xl font-bold">{item.question}</h3>
@@ -153,24 +152,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-24 bg-primary text-primary-foreground">
-        <div className="container px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to get started with Fidel?</h2>
-              <p className="text-primary-foreground/80 text-lg">
-                Join thousands of schools already benefiting from Fidel&apos;s comprehensive management system.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 md:justify-end">
-              <Button size="lg" variant="secondary" className="h-12 px-8 text-base" asChild>
-                <Link href="/contact">Get Started</Link>
-              </Button>
-              
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </main>
   )
 }
