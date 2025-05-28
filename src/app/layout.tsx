@@ -3,6 +3,8 @@ import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import type React from "react";
 import "./globals.css";
 
@@ -14,6 +16,9 @@ export const metadata = {
   title: "Fidel - School Management System",
   description:
     "Transforming school management with innovative technology solutions.",
+  icons: {
+    icon: "/fav.png",
+  },
 };
 
 export default function RootLayout({
@@ -29,6 +34,8 @@ export default function RootLayout({
           rubik.className
         )}
       >
+        <SpeedInsights />
+        <Analytics />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="relative flex min-h-screen flex-col">
             {/* Header with subtle border */}
